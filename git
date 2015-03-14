@@ -1,0 +1,7 @@
+Step 1: From your project repository, check out a new branch and test the changes.
+git checkout -b duodraco-master master
+git pull https://github.com/duodraco/curso-php-drc.git master
+Step 2: Merge the changes and update on GitHub.
+git checkout master
+git merge --no-ff duodraco-master
+git push origin master
