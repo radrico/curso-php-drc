@@ -2,13 +2,17 @@
 date_default_timezone_set('America/Sao_Paulo');
 //$file = file_get_contents('SacramentocrimeJanuary2006.csv');
 //$report = explode("\r",$file);
+//abrir o arquivo de dados
 $report = file('crimes.csv');
-$columns = current($report);
-$columns = explode(',', $columns);
-$columns = array_flip($columns);
-$line = next($report);
+//pegar a primeira linha do arquivo e usar como nome das colunas
+$columns = current($report); //current pega a linha no ponteiro
+$columns = explode(',', $columns); //explode transforma uma lista separada por 'x' em um array
+$columns = array_flip($columns); //array_flip inverte indices e valores
+$line = next($report); // move o ponteiro para a proxima linha do array
+//Inicialização de variaveis como arrays
 $summary = [];
 $daySummary = [];
+//dicionario de tradução dos dias da semana
 $dict = [
     'us' => [
         'Sunday',
