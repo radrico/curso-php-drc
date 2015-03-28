@@ -1,0 +1,13 @@
+{% extends 'base.twig' %}
+{% block body%}
+
+    <a href="/new">Nova Tarefa</a>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            <button>&#10004;</button>
+            <a href="/edit/{{ task.getId() }}">{{ task.getTitle() }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
